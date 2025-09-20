@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Books Collection</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 20px;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      color: #fff;
+    }
+  
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 3rem;
+      background: linear-gradient(45deg, #ff6a00, #ee0979);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: fadeIn 1.5s ease;
+    }
+  
+    .book-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 25px;
+      justify-content: center;
+      animation: slideUp 1.5s ease;
+    }
+  
+    .book {
+  background: linear-gradient(135deg, #1e1e2f, #2e2e4f);
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+  width: 220px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  overflow: hidden;
+  animation: fadeIn 2s ease;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  }
+  
+  .book-rating {
+  color: #ffce00;
+  font-size: 1.1em;
+  margin-bottom: 0; 
+  }
+  
+  
+    .book:hover {
+      transform: translateY(-10px) scale(1.05);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.6);
+    }
+  
+    .book img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      border: 3px solid #fff;
+      margin-bottom: 10px;
+    }
+  
+    .book-title {
+      font-weight: 700;
+      font-size: 1.1rem;
+      margin: 10px 0 5px;
+      color: #ffd166;
+    }
+  
+    .book-author {
+      font-size: 0.9em;
+      color: #ccc;
+      margin-bottom: 8px;
+    }
+  
+    .book-rating {
+      color: #ffce00;
+      font-size: 1.1em;
+      margin-bottom: 12px;
+    }
+  
+    .book button {
+      background: linear-gradient(45deg, #ff6a00, #ee0979);
+      color: #fff;
+      border: none;
+      border-radius: 30px;
+      padding: 8px 20px;
+      cursor: pointer;
+      font-size: 0.95em;
+      transition: background 0.3s ease;
+    }
+  
+    .book button:hover {
+      background: linear-gradient(45deg, #ee0979, #ff6a00);
+    }
+  
+  
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: scale(0.9); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+  
+    @keyframes slideUp {
+      0% { opacity: 0; transform: translateY(30px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <header class="bg-white shadow-md sticky top-0 z-10">
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold text-indigo-600">bio books</h1>
+      <nav class="space-x-4">
+        <a href="web1.html" class="text-gray-700 hover:text-indigo-500">back</a>
+      
+       
+      </nav>
+    </div>
+  </header>
+<h1>Books Collection</h1>
+
+
+<!-- Section 1 -->
+<div class="section-title">Top Picks</div>
+<div class="book-container">
+  <!-- Book 1 -->
+  <div class="book">
+    <img src="https://play.google.com/books/publisher/content/images/frontcover/zA6-EAAAQBAJ?fife=w88-h132" alt="100 Success Lessons From Elon Musk">
+    <p class="book-title">100 Success Lessons From Elon Musk</p>
+    <p class="book-author">N. Chokkan</p>
+    <p class="book-rating">⭐ 3.9</p>
+    <button onclick="window.open('https://play.google.com/books/reader?id=zA6-EAAAQBAJ&hl=en_IN')">Read</button>
+  </div>
+
+  <!-- Book 2 -->
+  <div class="book">
+    <img src="https://play.google.com/books/publisher/content/images/frontcover/23cWEQAAQBAJ?fife=w88-h132" alt="Fight">
+    <p class="book-title">Fight: Inside the Wildest Battle</p>
+    <p class="book-author">Jonathan Allen</p>
+    <p class="book-rating">⭐ 3.6</p>
+    <button onclick="window.open('https://play.google.com/books/reader?id=23cWEQAAQBAJ&hl=en_IN')">Read</button>
+  </div>
+
+  <!-- Book 3 -->
+  <div class="book">
+    <img src="https://play.google.com/books/publisher/content/images/frontcover/MEkSEQAAQBAJ?fife=w88-h132" alt="Together We Roared">
+    <p class="book-title">Together We Roared</p>
+    <p class="book-author">Steve Williams</p>
+    <p class="book-rating">⭐ 3.7</p>
+    <button onclick="window.open('https://play.google.com/books/reader?id=MEkSEQAAQBAJ&hl=en_IN')">Read</button>
+  </div>
+
+  <!-- Book 4 -->
+  <div class="book">
+    <img src="https://play.google.com/books/publisher/content/images/frontcover/CxiWEAAAQBAJ?fife=w88-h132" alt="Spare">
+    <p class="book-title">Spare</p>
+    <p class="book-author">Prince Harry</p>
+    <p class="book-rating">⭐ 3.7</p>
+    <button onclick="window.open('https://play.google.com/books/reader?id=CxiWEAAAQBAJ&hl=en_IN')">Read</button>
+  </div>
+
+  <!-- Book 5 -->
+  <div class="book">
+    <img src="https://play.google.com/books/publisher/content/images/frontcover/FR0REQAAQBAJ?fife=w88-h132" alt="As a Kite Falls">
+    <p class="book-title">As a Kite Falls</p>
+    <p class="book-author">Richard Tyler</p>
+    <p class="book-rating">⭐ 4.0</p>
+    <button onclick="window.open('https://play.google.com/books/reader?id=FR0REQAAQBAJ&hl=en_IN')">Read</button>
+  </div>
+</div>
+
+<!-- Section 2 -->
+<div class="section-title">More Books</div>
+<div class="book-container">
+
+  <!-- Book 6 -->
+  <div class="book">
+    <img src="https://play.google.com/books/publisher/content/images/frontcover/uBCYDwAAQBAJ?fife=w88-h132" alt="Perspective">
+    <p class="book-title">Perspective</p>
+    <p class="book-author">Ellyse Perry</p>
+    <p class="book-rating">⭐ 4.5</p>
+    <button onclick="window.open('https://play.google.com/books/reader?id=uBCYDwAAQBAJ&pg=GBS.PP12')">Read</button>
+  </div>
+
+  <!-- Book 7 -->
+  <div class="book">
+    <img src="https://play.google.com/books/publisher/content/images/frontcover/6uGiEAAAQBAJ?fife=w88-h132" alt="Never Finished">
+    <p class="book-title">Never Finished</p>
+    <p class="book-author">David Goggins</p>
+    <p class="book-rating">⭐ 4.8</p>
+    <button onclick="window.open('https://play.google.com/books/reader?id=6uGiEAAAQBAJ&hl=en_IN')">Read</button>
+  </div>
+
+  <!-- Book 8 -->
+  <div class="book">
+    <img src="https://play.google.com/books/publisher/content/images/frontcover/EbltAAAAQBAJ?fife=w88-h132" alt="Man's Search For Meaning">
+    <p class="book-title">Man's Search For Meaning</p>
+    <p class="book-author">Viktor E. Frankl</p>
+    <p class="book-rating">⭐ 4.4</p>
+    <button onclick="window.open('https://play.google.com/books/reader?id=EbltAAAAQBAJ&pg=GBS.PT5&hl=en')">Read</button>
+  </div>
+
+  <!-- Book 9 -->
+  <div class="book">
+    <img src="https://play.google.com/books/publisher/content/images/frontcover/GZpDEQAAQBAJ?fife=w88-h132" alt="Thirteen Months In The Himalayas">
+    <p class="book-title">Thirteen Months In The Himalayas</p>
+    <p class="book-author">Om Swami</p>
+    <p class="book-rating">⭐ 4.5</p>
+    <button onclick="window.open('https://play.google.com/books/reader?id=GZpDEQAAQBAJ&hl=en_IN')">Read</button>
+  </div>
+
+  <!-- Book 10 -->
+  <div class="book">
+    <img src="https://play.google.com/books/publisher/content/images/frontcover/NZ6kDQAAQBAJ?fife=w256-h256" alt="Swami Vivekananda">
+    <p class="book-title">Swami Vivekananda</p>
+    <p class="book-author">Swami Tejasananda</p>
+    <p class="book-rating">⭐ 4.5</p>
+    <button onclick="window.open('https://play.google.com/books/reader?id=NZ6kDQAAQBAJ&pg=GBS.PP1&hl=en')">Read</button>
+  </div>
+
+</div>
+
+</body>
+</html>

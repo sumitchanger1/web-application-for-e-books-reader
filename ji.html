@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Book Categories</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            color: white;
+            background: url();
+            background-color: rgb(5, 86, 100);
+        }
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            max-width: 90%;
+            margin: auto;
+            padding: 40px;
+            color: rgb(245, 245, 239);
+        }
+        .category {
+            position: relative;
+            height: 500px;
+            border-radius: 10px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px;
+            color: rgb(239, 241, 241);
+        }
+        .category::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            filter: blur(8px);
+            z-index: 0;
+        }
+        .overlay, .quote {
+            position: relative;
+            z-index: 1;
+        }
+        .overlay {
+            background: rgba(15, 14, 14, 0.6);
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 50%;
+        }
+        .quote {
+            background: rgba(8, 7, 7, 0.8);
+            padding: 15px;
+            border-radius: 10px;
+            color: rgb(247, 241, 241);
+            max-width: 40%;
+            font-style: italic;
+        }
+        button {
+            background-color: teal;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: darkcyan;
+        }
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+            .category {
+                flex-direction: column;
+                height: auto;
+                text-align: center;
+            }
+            .overlay, .quote {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="category" data-bg="pexels-badesaba-15187362.jpg">
+        <div class="overlay">
+            <h2>Fiction</h2>
+            <p>Explore an imaginative world of stories and characters.</p>
+            <button onclick="gotofunction()">Go to  Fiction</button>
+        </div>
+        <div class="quote">“A reader lives a thousand lives before he dies.” – George R.R. Martin</div>
+    </div>
+
+    <div class="category" data-bg="pexels-dilara-988605972-30254788 (1).jpg">
+        <div class="overlay">
+            <h2>Non-Fiction</h2>
+            <p>Delve into informative and educational reads.</p>
+            <button onclick="gotofunction1()">Go to  Non-Fiction</button>
+        </div>
+        <div class="quote">“An investment in knowledge pays the best interest.” – Benjamin Franklin</div>
+    </div>
+
+    <div class="category" data-bg="pexels-klaudia-rak-1198089-2383122.jpg">
+        <div class="overlay">
+            <h2>Self-Help</h2>
+            <p>Discover books that empower and inspire personal growth.</p>
+            <button onclick="gotofunction2()">go to  Self-Help</button>
+        </div>
+        <div class="quote">“Do what you can, with what you have, where you are.” – Theodore Roosevelt</div>
+    </div>
+
+    <div class="category" data-bg="pexels-pixabay-256450.jpg">
+        <div class="overlay">
+            <h2>biographies Fiction</h2>
+            <p>Journey into futuristic realms and speculative ideas.</p>
+            <button onclick="gotofunction3()">go to biographies </button>
+        </div>
+        <div class="quote">“The future belongs to those who believe in the beauty of their dreams.” – Eleanor Roosevelt</div>
+    </div>
+</div>
+
+<script>
+    // Set blurred background images via JavaScript
+    document.querySelectorAll('.category').forEach(category => {
+        const imgUrl = category.getAttribute('data-bg');
+        if (imgUrl) {
+            category.style.setProperty('--bg-url', `url(${imgUrl})`);
+            category.style.backgroundImage = 'none'; // Prevent fallback background
+            category.querySelector('::before'); // Just to be safe
+            category.style.setProperty('--bg-url', `url(${imgUrl})`);
+            category.style.setProperty('--img-url', `url(${imgUrl})`);
+            category.querySelector('style')?.remove(); // Remove inline styles if any
+            category.querySelector('::before');
+            category.style.position = 'relative';
+        }
+    });
+
+    // Add background manually via JS for better browser support
+    document.querySelectorAll('.category').forEach(category => {
+        const imgUrl = category.getAttribute('data-bg');
+        if (imgUrl) {
+            const beforeEl = document.createElement('div');
+            beforeEl.style.cssText = `
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                background-image: url('${imgUrl}');
+                background-size: cover;
+                background-position: center;
+                filter: blur(8px);
+                z-index: 0;
+            `;
+            category.prepend(beforeEl);
+        }
+    });
+
+    function gotofunction() {
+        window.location.href = "index.html";
+    }
+
+    function gotofunction1() {
+        window.location.href = "nonfic.html";
+    }
+
+    function gotofunction2() {
+        window.location.href = "selg.html";
+    }
+
+    function gotofunction3() {
+        window.location.href = "bio.html";
+    }
+</script>
+
+</body>
+</html>

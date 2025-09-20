@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <title>Book List</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 20px;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      color: #fff;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 3rem;
+      background: linear-gradient(45deg, #ff6a00, #ee0979);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: fadeIn 1.5s ease;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 2rem;
+      background: linear-gradient(45deg, #ff6a00, #ee0979);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: fadeIn 1.5s ease;
+    }
+
+    .book-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 25px;
+      justify-content: center;
+      animation: slideUp 1.5s ease;
+    }
+
+    .book {
+      background: linear-gradient(135deg, #1e1e2f, #2e2e4f);
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+      width: 220px;
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      overflow: hidden;
+      animation: fadeIn 2s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .book-rating {
+      color: #ffce00;
+      font-size: 1.1em;
+      margin-bottom: 0;
+    }
+
+    .book:hover {
+      transform: translateY(-10px) scale(1.05);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.6);
+    }
+
+    .book img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      border: 3px solid #fff;
+      margin-bottom: 10px;
+    }
+
+    .book-title {
+      font-weight: 700;
+      font-size: 1.1rem;
+      margin: 10px 0 5px;
+      color: #ffd166;
+    }
+
+    .book-author {
+      font-size: 0.9em;
+      color: #ccc;
+      margin-bottom: 8px;
+    }
+
+    .book button {
+      background: linear-gradient(45deg, #ff6a00, #ee0979);
+      color: #fff;
+      border: none;
+      border-radius: 30px;
+      padding: 8px 20px;
+      cursor: pointer;
+      font-size: 0.95em;
+      transition: background 0.3s ease;
+    }
+
+    .book button:hover {
+      background: linear-gradient(45deg, #ee0979, #ff6a00);
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: scale(0.9); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+
+    @keyframes slideUp {
+      0% { opacity: 0; transform: translateY(30px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <header class="bg-white shadow-md sticky top-0 z-10">
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold text-indigo-600">fiction books</h1>
+      <nav class="space-x-4">
+        <a href="web1.html" class="text-gray-700 hover:text-indigo-500">back</a>
+        
+      </nav>
+    </div>
+  </header>
+  <p class="section-title">Featured Books</p>
+
+  <div class="book-container">
+
+    <div class="book">
+      <img src="https://play.google.com/books/publisher/content/images/frontcover/L2oHEQAAQBAJ?w=300&usc=0" alt="I Don't Love You Anymore">
+      <p class="book-title">I Don't Love You Anymore</p>
+      <p class="book-author">Rithvik Singh</p>
+      <p class="book-rating">⭐ 4.7</p>
+      <button onclick="gotofunction2()">read</button>
+    </div>
+
+    <div class="book">
+      <img src="https://play.google.com/books/content/images/frontcover/N7vQHVPAIqYC?w=300&usc=0" alt="The Places That Scare You">
+      <p class="book-title">The Places That Scare You</p>
+      <p class="book-author">Pema Chödrön</p>
+      <p class="book-rating">⭐ 4.4</p>
+      <button onclick="gotofunction3()">read</button>
+    </div>
+
+    <div class="book">
+      <img src="https://play.google.com/books/publisher/content/images/frontcover/oBT0CwAAQBAJ?fife=w256-h256" alt="The Art of Communicating">
+      <p class="book-title">The Art of Communicating</p>
+      <p class="book-author">Thich Nhat Hanh</p>
+      <p class="book-rating">⭐ 4.5</p>
+      <button onclick="gotofunction4()">read</button>
+    </div>
+
+    <div class="book">
+      <img src="https://play.google.com/books/publisher/content/images/frontcover/Q456EAAAQBAJ?fife=w256-h256" alt="Love in a Blue Moon">
+      <p class="book-title">Love in a Blue Moon</p>
+      <p class="book-author">A Sai Kumar</p>
+      <p class="book-rating">⭐ 5.0</p>
+      <button onclick="gotofunction5()">read</button>
+    </div>
+
+    <div class="book">
+      <img src="https://play.google.com/books/content/images/frontcover/yxnXkl5Sj4AC?w=300&usc=0" alt="Thinking, Fast and Slow">
+      <p class="book-title">Thinking, Fast and Slow</p>
+      <p class="book-author">Daniel Kahneman</p>
+      <p class="book-rating">⭐ 4.3</p>
+      <button onclick="gotofunction6()">read</button>
+    </div>
+
+    <div class="book">
+      <img src="https://play.google.com/books/publisher/content/images/frontcover/MDksDwAAQBAJ?fife=w240-h345" alt="Ikigai">
+      <p class="book-title">Ikigai</p>
+      <p class="book-author">Hector Garcia</p>
+      <p class="book-rating">⭐ 4.3</p>
+      <button onclick="gotofunction7()">read</button>
+    </div>
+
+    <div class="book">
+      <img src="https://play.google.com/books/publisher/content/images/frontcover/Ac0XEAAAQBAJ?w=300&usc=0" alt="Noise of the Silence">
+      <p class="book-title">Noise of the Silence</p>
+      <p class="book-author">Qaiser Manzoor Bhat</p>
+      <p class="book-rating">⭐ 4.8</p>
+      <button onclick="gotofunction()">read</button>
+    </div>
+
+    <div class="book">
+      <img src="https://play.google.com/books/publisher/content/images/frontcover/4c4KEQAAQBAJ?w=300&usc=0" alt="Warmth">
+      <p class="book-title">Warmth</p>
+      <p class="book-author">Rithvik Singh</p>
+      <p class="book-rating">⭐ 4.9</p>
+      <button onclick="gotofunction8()">read</button>
+    </div>
+
+    <div class="book">
+      <img src="https://play.google.com/books/publisher/content/images/frontcover/VCD9AwAAQBAJ?fife=w256-h256" alt="Absence of Grace">
+      <p class="book-title">Absence of Grace</p>
+      <p class="book-author">Ann Warner</p>
+      <p class="book-rating">⭐ 4.9</p>
+      <button onclick="gotofunction9()">read</button>
+    </div>
+
+    <div class="book">
+      <img src="https://play.google.com/books/publisher/content/images/frontcover/jGWVEAAAQBAJ?fife=w256-h256" alt="I Wish I Wrote You">
+      <p class="book-title">I Wish I Wrote You</p>
+      <p class="book-author">Chad Duo</p>
+      <p class="book-rating">⭐ 5.0</p>
+      <button onclick="gotofunction10()">read</button>
+    </div>
+
+    <div class="book">
+      <img src="https://play.google.com/books/publisher/content/images/frontcover/NkgREAAAQBAJ?fife=w256-h256" alt="Finding Me">
+      <p class="book-title">Finding Me [Poetic Ver.]</p>
+      <p class="book-author">Ravi Verma</p>
+      <p class="book-rating">⭐ 5.0</p>
+      <button onclick="gotofunction11()">read</button>
+    </div>
+
+    <div class="book">
+      <img src="https://play.google.com/books/publisher/content/images/frontcover/aS1YEAAAQBAJ?fife=w256-h256" alt="Lost Within Myself">
+      <p class="book-title">Lost Within Myself</p>
+      <p class="book-author">Priti Kanwar Shekhawat</p>
+      <p class="book-rating">⭐ 4.2</p>
+      <button onclick="gotofunction12()">read</button>
+    </div>
+
+  </div>
+
+  <script>
+    function gotofunction() { window.location.href = "https://play.google.com/books/reader?id=Ac0XEAAAQBAJ&pg=GBS.PA5&hl=en_IN"; }
+    function gotofunction2() { window.location.href = "https://play.google.com/books/reader?id=L2oHEQAAQBAJ&pg=GBS.PT23&hl=en_IN"; }
+    function gotofunction3() { window.location.href = "https://play.google.com/books/reader?id=N7vQHVPAIqYC&pg=GBS.PR7&hl=en_IN"; }
+    function gotofunction4() { window.location.href = "https://play.google.com/books/reader?id=oBT0CwAAQBAJ&pg=GBS.PA1&hl=en_IN"; }
+    function gotofunction5() { window.location.href = "https://play.google.com/books/reader?id=Q456EAAAQBAJ&hl=en_IN"; }
+    function gotofunction6() { window.location.href = "https://play.google.com/books/reader?id=oV1tXT3HigoC&pg=GBS.PT19.w.4.0.67_264&hl=en_IN"; }
+    function gotofunction7() { window.location.href = "https://play.google.com/books/reader?id=MDksDwAAQBAJ&hl=en_IN"; }
+    function gotofunction8() { window.location.href = "https://play.google.com/books/reader?id=4c4KEQAAQBAJ&pg=GBS.PT30&hl=en_IN"; }
+    function gotofunction9() { window.location.href = "https://play.google.com/books/reader?id=VCD9AwAAQBAJ&hl=en_IN"; }
+    function gotofunction10() { window.location.href = "https://play.google.com/books/reader?id=jGWVEAAAQBAJ&pg=GBS.PT13&hl=en_IN"; }
+    function gotofunction11() { window.location.href = "https://play.google.com/books/reader?id=NkgREAAAQBAJ&hl=en_IN"; }
+    function gotofunction12() { window.location.href = "https://play.google.com/books/reader?id=aS1YEAAAQBAJ&pg=GBS.PT4&hl=en_IN"; }
+  </script>
+
+</body>
+</html>

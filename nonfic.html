@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Investment Books</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+  body {
+    margin: 0;
+    padding: 20px;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+    color: #fff;
+  }
+
+  h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 3rem;
+    background: linear-gradient(45deg, #ff6a00, #ee0979);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: fadeIn 1.5s ease;
+  }
+
+  .book-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;
+    animation: slideUp 1.5s ease;
+  }
+
+  .book {
+background: linear-gradient(135deg, #1e1e2f, #2e2e4f);
+border-radius: 15px;
+box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+width: 220px;
+padding: 20px;
+text-align: center;
+transition: transform 0.4s ease, box-shadow 0.4s ease;
+overflow: hidden;
+animation: fadeIn 2s ease;
+
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+}
+
+.book-rating {
+color: #ffce00;
+font-size: 1.1em;
+margin-bottom: 0; 
+}
+
+
+  .book:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.6);
+  }
+
+  .book img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    border: 3px solid #fff;
+    margin-bottom: 10px;
+  }
+
+  .book-title {
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin: 10px 0 5px;
+    color: #ffd166;
+  }
+
+  .book-author {
+    font-size: 0.9em;
+    color: #ccc;
+    margin-bottom: 8px;
+  }
+
+  .book-rating {
+    color: #ffce00;
+    font-size: 1.1em;
+    margin-bottom: 12px;
+  }
+
+  .book button {
+    background: linear-gradient(45deg, #ff6a00, #ee0979);
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    padding: 8px 20px;
+    cursor: pointer;
+    font-size: 0.95em;
+    transition: background 0.3s ease;
+  }
+
+  .book button:hover {
+    background: linear-gradient(45deg, #ee0979, #ff6a00);
+  }
+
+
+  @keyframes fadeIn {
+    0% { opacity: 0; transform: scale(0.9); }
+    100% { opacity: 1; transform: scale(1); }
+  }
+
+  @keyframes slideUp {
+    0% { opacity: 0; transform: translateY(30px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+</style>
+   
+</head>
+<body>
+  <header class="bg-white shadow-md sticky top-0 z-10">
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold text-indigo-600">non ficton books</h1>
+      <nav class="space-x-4">
+        <a href="web1.html" class="text-gray-700 hover:text-indigo-500">back</a>
+        
+       
+      </nav>
+    </div>
+  </header>
+<h1 style="text-align:center; color: white;">Top Investment Books</h1>
+
+<div class="book-container">
+
+  <div class="book">
+    <img src="Rich Dad Poor Dad.jpg" alt="Rich Dad Poor Dad">
+    <p class="book-title">Rich Dad Poor Dad</p>
+    <p class="book-author">Robert T. Kiyosaki</p>
+    <p class="book-rating">⭐ 4.4</p>
+    <button onclick="window.open('https://play.google.com/books/reader?id=GZC6DgAAQBAJ&pg=GBS.PP5&hl=en_IN')">Read</button>
+  </div>
+
+  <div class="book">
+    <img src="https://play.google.com/books/publisher/content/images/frontcover/U3f2DwAAQBAJ?fife=w256-h256" alt="The Psychology of Money">
+    <p class="book-title">The Psychology of Money</p>
+    <p class="book-author">Morgan Housel</p>
+    <p class="book-rating">⭐ 4.5</p>
+    <button onclick="window.open('https://play.google.com/books/reader?id=U3f2DwAAQBAJ&pg=GBS.PT49&hl=en_IN')">Read</button>
+  </div>
+
+  <div class="book">
+    <img src="https://play.google.com/books/publisher/content/images/frontcover/rUzuDwAAQBAJ?fife=w256-h256" alt="Productivity">
+    <p class="book-title">Productivity</p>
+    <p class="book-author">David Covey</p>
+    <p class="book-rating">⭐ 4.6</p>
+    <button onclick="window.open('https://play.google.com/books/reader?id=QkruDwAAQBAJ&pg=GBS.PP1.w.1.0.0&hl=en_IN')">Read</button>
+  </div>
+
+  <div class="book">
+    <img src="https://play.google.com/books/publisher/content/images/frontcover/ErrODwAAQBAJ?fife=w256-h256" alt="The Time Management">
+    <p class="book-title">The Time Management</p>
+    <p class="book-author">Kristin Hughes</p>
+    <p class="book-rating">⭐ 4.5</p>
+    <button onclick="window.open('https://play.google.com/books/reader?id=ErrODwAAQBAJ&hl=en_IN')">Read</button>
+  </div>
+
+  <div class="book">
+    <img src="https://play.google.com/books/publisher/content/images/frontcover/D0WyDwAAQBAJ?fife=w240-h345" alt="Option Trading">
+    <p class="book-title">Option Trading For Beginners & Dummies</p>
+    <p class="book-author">Benjamin Graham and David Dodd</p>
+    <p class="book-rating">⭐ 4.4</p>
+    <button onclick="window.open('https://play.google.com/books/reader?id=D0WyDwAAQBAJ&pg=GBS.PP1.w.0.0.0.3&hl=en_IN')">Read</button>
+  </div>
+
+  <div class="book">
+    <img src="https://play.google.com/books/content/images/frontcover/TYOdIrFJ2SkC?fife=w256-h256" alt="One Up On Wall Street">
+    <p class="book-title">One Up On Wall Street</p>
+    <p class="book-author">Peter Lynch</p>
+    <p class="book-rating">⭐ 4.4</p>
+    <button onclick="window.open('https://play.google.com/books/reader?id=TYOdIrFJ2SkC&hl=en_IN')">Read</button>
+  </div>
+
+  <div class="book">
+    <img src="https://play.google.com/books/publisher/content/images/frontcover/oHLsAgAAQBAJ?fife=w256-h256" alt="Think and Grow Rich">
+    <p class="book-title">Think and Grow Rich</p>
+    <p class="book-author">Napoleon Hill</p>
+    <p class="book-rating">⭐ 4.4</p>
+    <button onclick="window.open('https://play.google.com/books/reader?id=oHLsAgAAQBAJ&hl=en_IN')">Read</button>
+  </div>
+
+  <div class="book">
+    <img src="https://play.google.com/books/publisher/content/images/frontcover/hMY2DwAAQBAJ?fife=w256-h256" alt="Common Sense Investing">
+    <p class="book-title">The Little Book of Common Sense Investing</p>
+    <p class="book-author">John C. Bogle</p>
+    <p class="book-rating">⭐ 4.5</p>
+    <button onclick="window.open('https://play.google.com/books/reader?id=hMY2DwAAQBAJ&pg=GBS.PR2&hl=en_IN')">Read</button>
+  </div>
+
+  <div class="book">
+    <img src="https://play.google.com/books/content/images/frontcover/Fu2ixTDl0t4C?fife=w256-h256" alt="Benjamin Graham on Investing">
+    <p class="book-title">Benjamin Graham on Investing</p>
+    <p class="book-author">Rodney G. Klein</p>
+    <p class="book-rating">⭐ 4.0</p>
+    <button onclick="window.open('https://play.google.com/books/reader?id=Fu2ixTDl0t4C&pg=GBS.PP1&hl=en_IN')">Read</button>
+  </div>
+
+  <div class="book">
+    <img src="https://play.google.com/books/publisher/content/images/frontcover/VwvyEAAAQBAJ?fife=w256-h256" alt="The Intelligent Investor">
+    <p class="book-title">The Intelligent Investor</p>
+    <p class="book-author">Benjamin Graham</p>
+    <p class="book-rating">⭐ 3.9</p>
+    <button onclick="window.open('https://play.google.com/books/reader?id=VwvyEAAAQBAJ&pg=GBS.PP3&hl=en_IN')">Read</button>
+  </div>
+
+  <div class="book">
+    <img src="https://play.google.com/books/publisher/content/images/frontcover/danpDwAAQBAJ?fife=w256-h256" alt="Mental Toughness">
+    <p class="book-title">Mental Toughness</p>
+    <p class="book-author">Richard Floren</p>
+    <p class="book-rating">⭐ 4.0</p>
+    <button onclick="window.open('https://play.google.com/books/reader?id=danpDwAAQBAJ&pg=GBS.PP1&hl=en_IN')">Read</button>
+  </div>
+
+  <div class="book">
+    <img src="time.jpg" alt="Time is Money">
+    <p class="book-title">Time is Money</p>
+    <p class="book-author">Alex Altmaan</p>
+    <p class="book-rating">⭐ 3.9</p>
+    <button onclick="window.open('https://play.google.com/books/reader?id=8G8HEAAAQBAJ&hl=en_IN')">Read</button>
+  </div>
+
+</div>
+
+</body>
+</html>

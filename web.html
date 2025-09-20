@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ThoughtShare — Write & Read</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600&display=swap');
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Outfit', sans-serif;
+      background: linear-gradient(135deg, #dde6f8, #f2ecfa);
+      color: #333;
+      min-height: 100vh;
+      padding: 40px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h1 {
+      font-size: 2.8rem;
+      color: #4c4cff;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 20px;
+      padding: 30px;
+      width: 100%;
+      max-width: 600px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+      margin-bottom: 40px;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 16px;
+      margin: 14px 0;
+      border: 1px solid #ddd;
+      border-radius: 14px;
+      font-size: 1rem;
+      background: #f9f9f9;
+      transition: border 0.3s ease;
+      resize: vertical;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      outline: none;
+      border: 2px solid #4c4cff;
+    }
+
+    button {
+      background: linear-gradient(90deg, #4c4cff, #836fff);
+      border: none;
+      border-radius: 50px;
+      padding: 14px 28px;
+      color: #fff;
+      font-size: 1.05rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    button:hover {
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 0 6px 18px rgba(76, 76, 255, 0.3);
+    }
+
+    .writing-card {
+      background: #fafafa;
+      padding: 20px;
+      margin: 16px 0;
+      border-radius: 16px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+    }
+
+    .writing-card p {
+      font-size: 1.05rem;
+      color: #555;
+      line-height: 1.6;
+    }
+
+    .writing-card .meta {
+      margin-top: 10px;
+      color: #777;
+      font-size: 0.9rem;
+      text-align: right;
+    }
+  </style>
+</head>
+<header class="bg-white shadow-md sticky top-0 z-10">
+  <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+    <nav class="space-x-4">
+      <a href="web1.html" class="text-gray-700 hover:text-indigo-500">back</a>
+      
+    </nav>
+  </div>
+</header>
+
+  <h1>Share Your Writing</h1>
+ 
+
+  <!-- Share Form Card -->
+  <div class="card">
+    <input type="text" id="name" placeholder="Your Name">
+
+    <select id="type">
+      <option value="" disabled selected>Select a Category</option>
+      <option value="Poetry">Poetry</option>
+      <option value="Story">Story</option>
+      <option value="Essay">Essay</option>
+    </select>
+
+    <textarea id="content" placeholder="Write your story, poem, or thought..."></textarea>
+
+    <button onclick="submitWriting()">Share Now</button>
+  </div>
+
+  <!-- Writings Display Card -->
+  <div class="card">
+    <h2 style="color: #4c4cff; margin-bottom: 20px;">Recent Writings</h2>
+    <div id="writingsList"></div>
+  </div>
+
+  <script>
+    // Save to localStorage
+    function submitWriting() {
+      const name = document.getElementById('name').value.trim();
+      const type = document.getElementById('type').value;
+      const content = document.getElementById('content').value.trim();
+
+      if (name && type && content) {
+        const newWriting = { name, type, content, date: new Date().toLocaleString() };
+        let writings = JSON.parse(localStorage.getItem('writings')) || [];
+        writings.unshift(newWriting); // latest on top
+        localStorage.setItem('writings', JSON.stringify(writings));
+
+        document.getElementById('name').value = '';
+        document.getElementById('type').value = '';
+        document.getElementById('content').value = '';
+
+        displayWritings();
+        alert("Your writing has been shared!");
+      } else {
+        alert("Please fill out all fields!");
+      }
+    }
+
+    // Display writings from localStorage
+    function displayWritings() {
+      const writingsList = document.getElementById('writingsList');
+      writingsList.innerHTML = '';
+
+      let writings = JSON.parse(localStorage.getItem('writings')) || [];
+
+      if (writings.length === 0) {
+        writingsList.innerHTML = "<p>No writings shared yet. Be the first!</p>";
+        return;
+      }
+
+      writings.forEach(writing => {
+        const card = document.createElement('div');
+        card.className = "writing-card";
+        card.innerHTML = `
+          <p>"${writing.content}"</p>
+          <div class="meta">— ${writing.name}, ${writing.type} <br> <small>${writing.date}</small></div>
+        `;
+        writingsList.appendChild(card);
+      });
+    }
+
+    // Load on page start
+    window.onload = displayWritings;
+  </script>
+
+</body>
+</html>
